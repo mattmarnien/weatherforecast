@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/bf437d7780.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="jumbotron jumbotron-fluid bg-info">
+        <div class="container">
+          
+                
+          <h1 class="display-4">
+            <i class="fas fa-cloud-sun-rain"></i>
+            
+            Weather Forecast</h1>
+          <p class="lead"></p>
+        </div>
+    </header>
+
+    <div class="container-fluid ml-2">
+        <div class="row">
+        <div class="card col-3 pt-2" style="width: 18rem;">
+            <form id="searchForm">
+                <input type="text" placeholder="Search for your City" id="searchInput" class="w-75">
+                <input type="submit"  id="searchSubmit">
+            </form>            
+          </div>
+          <div class="col-8 ml-5">
+              <div class="row mb-2">
+                  <section class="card w-100" id="currentWeather">
+                      <h3 id="cityNameH3">
+                          City name
+                      </h3> 
+                      <p id="temperatureP">
+                          Temperature:
+                      </p>
+                      <p id="humidityP">
+                          Humidity:
+                      </p>
+                      <p id="windSpeedP">
+                          Windspeed:
+                      </p>
+                    </section>
+                </div>
+                <div class="row mt-2">
+                    <section class="card w-100" id="forecast">
+                        <div id=forecastImages>
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSpf8usDCmXFy3g6jB_559zT0-hqkDcKHM3Wj3vkE755oM6TqHT">
+
+                        </div>
+        
+                      </section>
+
+                </div>
+
+              
+              </div>
+
+          </div>
+
+         
+              
+
+
+
+          </div>
+          </div>
+          
+
+
+    </div>
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
