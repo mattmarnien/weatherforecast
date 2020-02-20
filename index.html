@@ -23,18 +23,22 @@
 
     <div class="container-fluid ml-2">
         <div class="row">
-        <div class="card col-3 pt-2" style="width: 18rem;">
+        <div class="card col-3 pt-2 pl-2" style="width: 18rem;">
             <form id="searchForm">
                 <input type="text" placeholder="Search for your City" id="searchInput" class="w-75">
                 <input type="submit"  id="searchSubmit">
-            </form>            
+            </form>   
+            <div id="historyColumn" class="row">
+
+            </div>         
           </div>
           <div class="col-8 ml-5">
               <div class="row mb-2">
                   <section class="card w-100" id="currentWeather">
                       <h3 id="cityNameH3">
-                          City name
+                          City:
                       </h3> 
+                      <img id="weatherIcon" src="" class="w-25">
                       <p id="temperatureP">
                           Temperature:
                       </p>
@@ -44,15 +48,14 @@
                       <p id="windSpeedP">
                           Windspeed:
                       </p>
+                      <p id="UVIndex">
+                        UV:
+                      </p>
                     </section>
                 </div>
                 <div class="row mt-2">
-                    <section class="card w-100" id="forecast">
-                        <div id=forecastImages>
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSpf8usDCmXFy3g6jB_559zT0-hqkDcKHM3Wj3vkE755oM6TqHT">
-
-                        </div>
-        
+                    <section class="w-100 row" id="forecast">
+                       
                       </section>
 
                 </div>
