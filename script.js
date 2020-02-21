@@ -50,19 +50,6 @@ function getForecastQuery(){
         return forcastQueryUrl = forcastQueryUrl = "http://api.openweathermap.org/data/2.5/forecast/?q=" + cityName
         + "&units=Imperial&APPID=8c866bc4772f56717eb9f246ee1164bc";
     }
-// function getUV(lat,lon){
-//   UVQueryUrl = ("hapi.openweathermap.org/data/2.5/uvi/forecast?lat=" + lat + "&lon=" + lon)
-//         $.ajax({
-//           url: UVQueryUrl,
-//           method: "GET"
-//         }).then(function (response){
-//           console.log(response);
-          
-
-//         })
-
-// }
-
 
 function getWeather(){
    
@@ -75,8 +62,8 @@ function getWeather(){
         cityNameH.text(response.name);
         $("#weatherIcon").attr("src", "http://openweathermap.org/img/wn/" + response.weather[0].icon + "@2x.png")
         cityTemp.text("Temperature: " + response.main.temp + "°F");
-        cityHumidity.text(response.main.humidity)
-        cityWind.text(response.wind.speed);
+        cityHumidity.text("Humidity: " + response.main.humidity + "%")
+        cityWind.text("Wind Speed" + response.wind.speed + "mph");
         let coord = response.coord;
         
         getUV(coord);
@@ -126,35 +113,26 @@ $.ajax({
           var UV = response.value;
           console.log(UV);
           UVIndex.text("UV: " + UV);
+          if (parseInt(UV) < 3){
+            UVIndex.attr("class", "lowUV")
+          }
+          else if (parseInt(UV) < 7){
+            UVIndex.attr("class", "medUV")
+          }
+          else {
+            UVIndex.attr("class", "highUV")
+
+          }
           
           
  })
 
 }
 
-// searchSubmit.on("submit", function(event){
-//     event.preventDefault();
-// });
-
-
-
-// searchForm.on("submit", function(event){
-//     event.preventDefault(); 
-// });
-// searchInput.on("submit", function(event){
-//     event.preventDefault(); 
-// });
-// searchSubmit.on("click", function(event){
-//     event.preventDefault(); 
-// });
-
-
 searchForm.on("submit", function(event) {
 event.preventDefault();
 cityName = searchInput.val();
 console.log(cityName);
-// cityHistoryArr.push(cityName);
-
 weatherQueryUrl = getWeatherQuery();
 forecastQueryUrl = getForecastQuery();
 response = getWeather();
@@ -168,7 +146,7 @@ if (oldCities !== null){
 newCities.unshift(cityName);
 var storage = JSON.stringify(newCities);
 localStorage.setItem("cities", storage);
-// console.log(currentWeatherInfo);
+
 
 historyGen();
 });
