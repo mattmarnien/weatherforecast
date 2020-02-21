@@ -1,6 +1,6 @@
-var weatherQueryUrl = "http://api.openweathermap.org/data/2.5/weather?q=" + cityName
+var weatherQueryUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName
 + "&APPID=8c866bc4772f56717eb9f246ee1164bc";
-var forecastQueryUrl = "http://api.openweathermap.org/data/2.5/forecast?q=" + cityName
+var forecastQueryUrl = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName
 + "&APPID=8c866bc4772f56717eb9f246ee1164bc";
 var cityName = ''; 
 var searchForm = $("#searchForm");
@@ -42,12 +42,12 @@ getWeather();
 })
 
 function getWeatherQuery(){
-    return weatherQueryUrl = weatherQueryUrl = "http://api.openweathermap.org/data/2.5/weather?q=" + cityName
+    return weatherQueryUrl = weatherQueryUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName
     + "&units=imperial&APPID=8c866bc4772f56717eb9f246ee1164bc";
 }
 
 function getForecastQuery(){
-        return forcastQueryUrl = forcastQueryUrl = "http://api.openweathermap.org/data/2.5/forecast/?q=" + cityName
+        return forcastQueryUrl = forcastQueryUrl = "https://api.openweathermap.org/data/2.5/forecast/?q=" + cityName
         + "&units=Imperial&APPID=8c866bc4772f56717eb9f246ee1164bc";
     }
 
@@ -60,7 +60,7 @@ function getWeather(){
           console.log(response);
 
         cityNameH.text(response.name);
-        $("#weatherIcon").attr("src", "http://openweathermap.org/img/wn/" + response.weather[0].icon + "@2x.png")
+        $("#weatherIcon").attr("src", "https://openweathermap.org/img/wn/" + response.weather[0].icon + "@2x.png")
         cityTemp.text("Temperature: " + response.main.temp + "°F");
         cityHumidity.text("Humidity: " + response.main.humidity + "%")
         cityWind.text("Wind Speed" + response.wind.speed + "mph");
@@ -87,7 +87,7 @@ function getWeather(){
             newH7Temp.text("Temp: " + response.list[i].main.temp + "°F")
             newH6.text(date);
             newH7Humid.text("Humidity: " + response.list[i].main.humidity + "%");
-            newIcon.attr("src", "http://openweathermap.org/img/wn/" + response.list[i].weather[0].icon + "@2x.png")
+            newIcon.attr("src", "https://openweathermap.org/img/wn/" + response.list[i].weather[0].icon + "@2x.png")
             forecastDiv.append(newForecastDiv);
             newForecastDiv.append(newH6, newIcon, newH7Temp, newH7Humid);
 
@@ -103,7 +103,7 @@ function getUV(coord){
   console.log(coord)
   let lat = coord.lat;
   let lon = coord.lon;
-  UVQueryUrl = ("http://api.openweathermap.org/data/2.5/uvi?appid=8c866bc4772f56717eb9f246ee1164bc&lat=" + lat + "&lon=" + lon)  
+  UVQueryUrl = ("https://api.openweathermap.org/data/2.5/uvi?appid=8c866bc4772f56717eb9f246ee1164bc&lat=" + lat + "&lon=" + lon)  
 $.ajax({
 
           url: UVQueryUrl,
